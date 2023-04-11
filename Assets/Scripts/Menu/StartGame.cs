@@ -5,11 +5,11 @@ using UnityEngine;
 public class StartGame : MonoBehaviour
 {
     public Settings settings;
-    void Awake()
+    /*void Awake()
     {
         Screen.fullScreen = PlayerPrefs.GetInt("Resolution") == 1;
         print("Awake");
-    }
+    }*/
 
     private void Start()
     {

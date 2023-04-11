@@ -13,6 +13,8 @@ public class Settings : MonoBehaviour
     [SerializeField] TMP_Dropdown quality;
     [SerializeField] Slider volume;
 
+    [SerializeField] TMP_Text text;
+
     private bool _fullscreen = true;
 
 
@@ -25,14 +27,17 @@ public class Settings : MonoBehaviour
     {
         _fullscreen = !_fullscreen;
         Screen.fullScreen = _fullscreen;
+        text.text = "full";
 
         if (fullscreen.isOn)
         {
             fullscreen.isOn = false;
+            text.text = "false";
         }
         else
         {
             fullscreen.isOn = true;
+            text.text = "true";
         }
         
 
