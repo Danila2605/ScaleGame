@@ -20,8 +20,9 @@ public class Settings : MonoBehaviour
 
     private void Awake()
     {
-        var listAvailableStrings = resolutions.options.Select(option => option.text).ToList();
-        resolutions.value = PlayerPrefs.GetInt("Resolution"); 
+        resolutions.value = PlayerPrefs.GetInt("Resolution");
+
+        quality.value = PlayerPrefs.GetInt("Quality");
 
         
     }
@@ -29,19 +30,9 @@ public class Settings : MonoBehaviour
     {
         _fullscreen = !_fullscreen;
         Screen.fullScreen = _fullscreen;
-/*        text.text = "full";
-*/
-        if (_fullscreen)
-        {
-            fullscreen.isOn = false;
-            /*text.text = "false";*/
-        }
-        else
-        {
-            fullscreen.isOn = true;
-/*            text.text = "true";
-*/        }
-        
+
+        /*fullscreen.enabled = _fullscreen;*/
+
 
         PlayerPrefs.SetInt("Fullscreen", _fullscreen ? 1 : 0);
     }
@@ -70,5 +61,30 @@ public class Settings : MonoBehaviour
         {
             Screen.SetResolution(1024, 768, isFullscreen);
         }   
+    }
+
+    public void SetQuality()
+    {
+        PlayerPrefs.SetInt("Quality", quality.value);
+
+        int selectedIndex = PlayerPrefs.GetInt("Quality");
+
+        if (selectedIndex == 0)
+        {
+            print(0);
+        }
+        else if (selectedIndex == 1)
+        {
+            print(1);
+        }
+        else 
+        { 
+            print(2); 
+        }
+    }
+
+    public void SetVolume()
+    {
+
     }
 }

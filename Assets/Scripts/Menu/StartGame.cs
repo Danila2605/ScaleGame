@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-    public Settings settings;
+
     void Awake()
     {
-        Screen.fullScreen = PlayerPrefs.GetInt("Resolution") == 1;
-        print("Awake");
+        PlayerPrefs.SetInt("Fullscreen", 1);
+        Screen.fullScreen = PlayerPrefs.GetInt("Fullscreen") == 1;
+
     }
 
-    /*private void Start()
-    {
-        if (PlayerPrefs.GetInt("Fullscreen") == 1)
-        {
-            settings.Fullscreen();
-        }
-    }*/
+
 
 
 }
