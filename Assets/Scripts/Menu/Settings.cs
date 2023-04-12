@@ -22,23 +22,25 @@ public class Settings : MonoBehaviour
     {
         var listAvailableStrings = resolutions.options.Select(option => option.text).ToList();
         resolutions.value = PlayerPrefs.GetInt("Resolution"); 
+
+        
     }
     public void Fullscreen()
     {
         _fullscreen = !_fullscreen;
         Screen.fullScreen = _fullscreen;
-        text.text = "full";
-
-        if (fullscreen.isOn)
+/*        text.text = "full";
+*/
+        if (_fullscreen)
         {
             fullscreen.isOn = false;
-            text.text = "false";
+            /*text.text = "false";*/
         }
         else
         {
             fullscreen.isOn = true;
-            text.text = "true";
-        }
+/*            text.text = "true";
+*/        }
         
 
         PlayerPrefs.SetInt("Fullscreen", _fullscreen ? 1 : 0);
