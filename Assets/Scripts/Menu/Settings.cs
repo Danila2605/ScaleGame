@@ -11,9 +11,10 @@ public class Settings : MonoBehaviour
     [SerializeField] Toggle fullscreen;
 
     [SerializeField] TMP_Dropdown quality;
-    [SerializeField] Slider volume;
+    
 
     [SerializeField] TMP_Text text;
+    
 
     private bool _fullscreen = true;
 
@@ -83,8 +84,4 @@ public class Settings : MonoBehaviour
         }
     }
 
-    public void SetVolume()
-    {
-
-    }
 }

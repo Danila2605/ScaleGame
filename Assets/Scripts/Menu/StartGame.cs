@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour
     {
         PlayerPrefs.SetInt("Fullscreen", 1);
         Screen.fullScreen = PlayerPrefs.GetInt("Fullscreen") == 1;
-
+        
     }
 
 
