@@ -269,7 +269,6 @@ GameObject:
   - component: {fileID: 3345319932953941922}
   - component: {fileID: 3342338810445042266}
   - component: {fileID: 3342567287210184304}
-  - component: {fileID: 3455554234869177928}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -374,22 +373,6 @@ MonoBehaviour:
   headToLower: {fileID: 3457475445154105974}
   crouchYHeadPosition: 1
   colliderToLower: {fileID: 3319945373719410732}
---- !u!114 &3455554234869177928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455058459799320126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5830b4dbb8b3a5549b30ff749d6aace9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointer: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &3455554234809978110
 GameObject:
   m_ObjectHideFlags: 0
