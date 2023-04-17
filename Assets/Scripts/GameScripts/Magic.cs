@@ -9,7 +9,7 @@ public class Magic : MonoBehaviour
     public LayerMask ObjectLM;
     public LayerMask NoObjectLM;
 
-    private float _originalScale;
+    private Vector3 _originalScale;
     private float _originalDistance;
 
     void Update()
@@ -21,7 +21,7 @@ public class Magic : MonoBehaviour
             {
                 _target = objectHit.transform;
                 _target.GetComponent<Rigidbody>().isKinematic = true;
-                _originalScale = _target.localScale.x;
+                _originalScale = _target.localScale;
                 _originalDistance = Vector3.Distance(transform.position, _target.position);
             }
         }
@@ -48,7 +48,7 @@ public class Magic : MonoBehaviour
             float distance = Vector3.Distance(transform.position, _target.position);
             float scaleMultiplier = distance / _originalDistance;
 
-            _target.localScale = scaleMultiplier * _originalScale * Vector3.one;
+            _target.localScale = scaleMultiplier * _originalScale /** Vector3.one*/;
         }
     }
 }

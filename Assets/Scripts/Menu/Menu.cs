@@ -32,7 +32,7 @@ public class Menu : MonoBehaviour
     }*/
     public void ToPlay()
     {
-        /*SceneManager.LoadScene(0);*/
+        SceneManager.LoadScene(1);
         PlayerPrefs.SetInt("OnGame", 1);
         
     }
