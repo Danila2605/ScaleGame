@@ -21,24 +21,23 @@ public class SlotTrigger : MonoBehaviour
             if (other.GetComponent<Transform>().localScale.x <= _sc && other.GetComponent<Transform>().localScale.x >= _sc - 0.2f)
             {
                 other.transform.position = gameObject.transform.position;
-                other.GetComponent<Rigidbody>().useGravity = false;
+                /*other.GetComponent<Rigidbody>().useGravity = false;*/
                 other.GetComponent<Transform>().localScale = gameObject.transform.localScale;
             }
             if (other.GetComponent<Transform>().localScale == gameObject.transform.localScale)
             {
                 //Какие либо изменения
-
                 _an.Play(NameAnimation);
             }
         }
     }
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Object"))
         {
-            other.GetComponent<Rigidbody>().useGravity = true;
-            //Если достать из паза
-
+            Debug.Log(111);
+            other.GetComponent<Transform>().localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+            //*other.GetComponent<Rigidbody>().useGravity = true;*//*
             _an.Play("New State");
         }
     }
