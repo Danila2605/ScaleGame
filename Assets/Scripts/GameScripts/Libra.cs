@@ -5,26 +5,44 @@ using UnityEngine;
 public class Libra : MonoBehaviour
 {
     public GameObject _gj;
-    private Vector3 StartPos;
-    private Vector3 StartPosGJ;
     private Vector3 ChangePos;
     private Vector3 TransformY;
+    private float StartPos;
+    private bool flag = true;
 
     private void Start()
     {
-        StartPos = new Vector3(0, transform.position.y, 0);
-        StartPosGJ = new Vector3(0, _gj.transform.position.y, 0);
         ChangePos = new Vector3(0, transform.position.y, 0);
+        StartPos = gameObject.transform.position.y;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Rigidbody>().mass >= 10)
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+        }
     }
     private void Update()
     {
         TransformY = new Vector3(0, transform.position.y, 0);
+        flag = true;
         if (ChangePos != TransformY)
         {
-            Debug.Log(111);
+            flag = false;
             ChangePos -= new Vector3(0, transform.position.y, 0);
-            _gj.transform.position += ChangePos ;
+            _gj.transform.position += ChangePos;
             ChangePos = TransformY;
+        }
+        if (Mathf.Abs(TransformY.y - StartPos) >= 0.1f && flag)
+        {
+            gameObject.transform.position += new Vector3(0, 0.05f, 0);
         }
     }
 }

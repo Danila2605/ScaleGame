@@ -12,19 +12,19 @@ public class SlotTrigger : MonoBehaviour
     void Start()
     {
         _an = Gm.GetComponent<Animator>();
-        _sc = gameObject.transform.localScale.x;
+        _sc = gameObject.transform.localScale.x * 2;
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Object"))
         {
-            if (other.GetComponent<Transform>().localScale.x <= _sc && other.GetComponent<Transform>().localScale.x >= _sc - 0.2f)
+            if (other.GetComponent<Transform>().localScale.x <= _sc && other.GetComponent<Transform>().localScale.x >= _sc - 0.15f)
             {
                 other.transform.position = gameObject.transform.position;
                 /*other.GetComponent<Rigidbody>().useGravity = false;*/
-                other.GetComponent<Transform>().localScale = gameObject.transform.localScale;
+                other.GetComponent<Transform>().localScale = gameObject.transform.localScale * 2;
             }
-            if (other.GetComponent<Transform>().localScale == gameObject.transform.localScale)
+            if (other.GetComponent<Transform>().localScale == gameObject.transform.localScale * 2)
             {
                 //Какие либо изменения
                 _an.Play(NameAnimation);

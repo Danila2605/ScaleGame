@@ -19,8 +19,9 @@ public class Magic : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit objectHit;
-            if (Physics.Raycast(transform.position, transform.forward, out objectHit, Mathf.Infinity/*, ObjectLM*/) && objectHit.collider.tag == "Object")
+            if (Physics.Raycast(transform.position, transform.forward + new Vector3(0, 0.05f, 0), out objectHit, Mathf.Infinity/*, ObjectLM*/) && objectHit.collider.tag == "Object")
             {
+               
                 _target = objectHit.transform;
                 _target.GetComponent<Rigidbody>().isKinematic = true;
                 _target.GetComponent<BoxCollider>().enabled = false;
@@ -46,15 +47,15 @@ public class Magic : MonoBehaviour
         RaycastHit noObjectHit;
         if (Physics.Raycast(transform.position, transform.forward, out noObjectHit, Mathf.Infinity, NoObjectLM))
         {
-            var positionOffsetZ = transform.forward * _target.localScale.x;
+            var positionOffsetZ = (transform.forward * _target.localScale.z) / 2;
             var positionOffsetY = transform.up * _target.localScale.y;
 
-            _target.position = noObjectHit.point - positionOffsetZ + (positionOffsetY + _dopPosition) / 2.5f;
+            _target.position = noObjectHit.point - positionOffsetZ * 1.1f + (positionOffsetY + _dopPosition) / 2.5f;
 
             float distance = Vector3.Distance(transform.position, _target.position);
             float scaleMultiplier = distance / _originalDistance;
 
-            if (_originalScale.x * scaleMultiplier <= 30)
+            if (_originalScale.x * scaleMultiplier <= 25)
             {
                 _target.localScale = scaleMultiplier * _originalScale /** Vector3.one*/;
                 _target.GetComponent<Rigidbody>().mass = scaleMultiplier * _originalMass;
