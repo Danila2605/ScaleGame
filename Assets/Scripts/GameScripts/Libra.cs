@@ -42,7 +42,7 @@ public class Libra : MonoBehaviour
         }
         if (Mathf.Abs(TransformY.y - StartPos) >= 0.1f && flag)
         {
-            gameObject.transform.position += new Vector3(0, 0.02f, 0);
+            gameObject.transform.position += new Vector3(0, 0.05f, 0);
         }
     }
 }

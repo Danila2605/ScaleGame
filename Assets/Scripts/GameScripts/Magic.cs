@@ -47,10 +47,10 @@ public class Magic : MonoBehaviour
         RaycastHit noObjectHit;
         if (Physics.Raycast(transform.position, transform.forward, out noObjectHit, Mathf.Infinity, NoObjectLM))
         {
-            var positionOffsetZ = transform.forward * _target.localScale.z;
+            var positionOffsetZ = (transform.forward * _target.localScale.z) / 2;
             var positionOffsetY = transform.up * _target.localScale.y;
 
-            _target.position = noObjectHit.point - positionOffsetZ  + (positionOffsetY + _dopPosition) / 2.5f;
+            _target.position = noObjectHit.point - positionOffsetZ * 1.1f + (positionOffsetY + _dopPosition) / 2.5f;
 
             float distance = Vector3.Distance(transform.position, _target.position);
             float scaleMultiplier = distance / _originalDistance;
