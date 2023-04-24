@@ -31,14 +31,13 @@ public class SlotTrigger : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit(Collider other)
+/*    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Object"))
         {
-            Debug.Log(111);
             other.GetComponent<Transform>().localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             //*other.GetComponent<Rigidbody>().useGravity = true;*//*
             _an.Play("New State");
         }
-    }
+    }*/
 }
