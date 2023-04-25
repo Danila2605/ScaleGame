@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3693518035650099892}
   - component: {fileID: 3693518035650099893}
   - component: {fileID: 3693518035650099890}
-  - component: {fileID: 3693518035650099891}
+  - component: {fileID: 6128236627889401575}
   m_Layer: 6
   m_Name: Slot
   m_TagString: slot
@@ -195,7 +195,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3693518035650099891
+--- !u!114 &6128236627889401575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,11 +204,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3693518035650099889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04fe12043f04ef94cab231ad5b764286, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gm: {fileID: 0}
-  NameAnimation: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.99437773, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3693518035890284991
 GameObject:
   m_ObjectHideFlags: 0
