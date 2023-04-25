@@ -36,12 +36,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("OnGame", 1);
         
     }
-
-    public void ToContinue()
-    {
-        //TODO
-        PlayerPrefs.DeleteKey("OnGame");
-    }
     
     public void ToExit()
     {
