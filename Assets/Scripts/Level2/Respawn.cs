@@ -5,9 +5,14 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [HideInInspector] Vector3 Position;
+    [SerializeField] GameObject board;
+    [HideInInspector] Vector3 PositionStart;
 
 
+    private void Start()
+    {
+        PositionStart = board.transform.position;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -15,6 +20,10 @@ public class Respawn : MonoBehaviour
             /* Position = Start2Level.PositionStart;*/
             player.transform.position = Start2Level.PositionStart;
             print("Enter");
+        }
+        if (other.CompareTag("Object"))
+        {
+            other.transform.position = PositionStart;
         }
     }
 }

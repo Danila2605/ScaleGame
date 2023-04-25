@@ -3,16 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - slot
+  - Object
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - slot
   - Water
   - UI
-  - 
-  - 
+  - player
+  - object
   - 
   - 
   - 
