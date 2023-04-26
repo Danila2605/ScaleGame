@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnPaused : MonoBehaviour
 {
@@ -34,8 +35,16 @@ public class OnPaused : MonoBehaviour
             cameraAddition.SetActive(false);
             
         }
-                
-            
-        
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void DontPaused()
+    {
+        cameraMain.SetActive(true);
+        cameraAddition.SetActive(false);
     }
 }

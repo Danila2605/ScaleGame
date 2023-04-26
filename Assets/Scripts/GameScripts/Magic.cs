@@ -14,6 +14,30 @@ public class Magic : MonoBehaviour
     private float _originalDistance;
     private float _originalMass;
 
+    void Start()
+    {
+        bool isFullscreen = PlayerPrefs.GetInt("Fullscreen") == 1;        
+
+        int selectedIndex = PlayerPrefs.GetInt("Resolution");
+
+        if (selectedIndex == 0)
+        {
+            Screen.SetResolution(1920, 1080, isFullscreen);
+        }
+        else if (selectedIndex == 1)
+        {
+            Screen.SetResolution(1600, 900, isFullscreen);
+        }
+        else if (selectedIndex == 2)
+        {
+            Screen.SetResolution(1280, 720, isFullscreen);
+        }
+        else if (selectedIndex == 3)
+        {
+            Screen.SetResolution(1024, 768, isFullscreen);
+        }
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
