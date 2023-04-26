@@ -20,11 +20,14 @@ public class BgMusic : MonoBehaviour
     {
         musicVolume = vol;
         PlayerPrefs.SetFloat("Volume", musicVolume);
+        PlayerPrefs.Save();
+
+        /*volume.value = musicVolume;*/
     }
 
     private void Update()
     {
-        audioSrc.volume = /*musicVolume;*/ PlayerPrefs.GetFloat("Volume");
+        volume.value = PlayerPrefs.GetFloat("Volume");
     }
     
 }

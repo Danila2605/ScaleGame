@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] AudioSource musicSource;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        musicSource.volume = PlayerPrefs.GetFloat("Volume");
     }
 }

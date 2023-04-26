@@ -20,7 +20,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Object"))
         {
             floor.GetComponent<Rigidbody>().isKinematic = false;
             wall1.GetComponent<Rigidbody>().isKinematic = false;

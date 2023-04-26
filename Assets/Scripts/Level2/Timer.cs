@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    float time = 14;
+    float time = 8;
 
     // Update is called once per frame
     void Update()
