@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnterSecondLv : MonoBehaviour
+public class LoadStart : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 }
