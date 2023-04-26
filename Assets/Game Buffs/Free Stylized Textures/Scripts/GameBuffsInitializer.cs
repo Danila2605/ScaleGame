@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameBuffs.FreeStylizedTextures
 {
-    [InitializeOnLoad]
+/*    [InitializeOnLoad]
     public static class GameBuffsInitializer
     {
         private const string GAMEBUFFS_INITIALIZED_FREETEXTURES = "GameBuffs.Initializer.FreeStylizedTextures";
@@ -30,5 +30,5 @@ namespace GameBuffs.FreeStylizedTextures
         {
             Application.OpenURL(GAMEBUFFS_MEGAPACK_URL);
         }
-    }
+    }*/
 }

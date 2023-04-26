@@ -10,6 +10,8 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Screen.lockCursor = false;
         if (PlayerPrefs.HasKey("OnGame") == true)
         {
             buttonContinue.SetActive(true);
@@ -32,7 +34,7 @@ public class Menu : MonoBehaviour
     }*/
     public void ToPlay()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         PlayerPrefs.SetInt("OnGame", 1);
         
     }

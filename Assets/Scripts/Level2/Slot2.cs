@@ -10,7 +10,7 @@ public class Slot2 : MonoBehaviour
 
     void Start()
     {
-        _sc = gameObject.transform.lossyScale.y;
+        _sc = gameObject.transform.lossyScale.y*2;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -21,7 +21,7 @@ public class Slot2 : MonoBehaviour
                 Debug.Log(111);
                 other.transform.position = gameObject.transform.position;
                 /*other.GetComponent<Rigidbody>().useGravity = false;*/
-                other.GetComponent<Transform>().localScale = other.GetComponent<Transform>().localScale;
+                other.GetComponent<Transform>().localScale = gameObject.transform.localScale*2;
                 //Какие либо изменения
                 _GO.SetActive(false);
                 _GO2.SetActive(true);
