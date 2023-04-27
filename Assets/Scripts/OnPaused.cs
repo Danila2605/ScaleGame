@@ -10,6 +10,7 @@ public class OnPaused : MonoBehaviour
 
     private bool _isPaused = false;
 
+
     // Update is called once per frame
     void Update()
     {

@@ -15,13 +15,15 @@ public class Finish : MonoBehaviour
     [SerializeField] GameObject light;
     [SerializeField] GameObject sphereSpace;
     [SerializeField] GameObject triggerTimer;
+    [SerializeField] GameObject roof;
 
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Object"))
         {
+            roof.GetComponent<Rigidbody>().isKinematic = false;
             floor.GetComponent<Rigidbody>().isKinematic = false;
             wall1.GetComponent<Rigidbody>().isKinematic = false;
             wall2.GetComponent<Rigidbody>().isKinematic = false;
