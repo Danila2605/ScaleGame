@@ -6,7 +6,11 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-
+    private void Start()
+    {
+        Cursor.visible = true;
+        Screen.lockCursor = false;
+    }
     /*public void AppearToContinue()
     {
         if (PlayerPrefs.HasKey("OnGame") == true)
