@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Music : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
-    void Awake()
+    private void Start()
     {
         DontDestroyOnLoad(gameObject);
     }

@@ -79,7 +79,7 @@ public class Magic : MonoBehaviour
             float distance = Vector3.Distance(transform.position, _target.position);
             float scaleMultiplier = distance / _originalDistance;
 
-            if (_originalScale.x * scaleMultiplier <= 25)
+            if (_originalScale.x * scaleMultiplier <= 17)
             {
                 _target.localScale = scaleMultiplier * _originalScale /** Vector3.one*/;
                 _target.GetComponent<Rigidbody>().mass = scaleMultiplier * _originalMass;
