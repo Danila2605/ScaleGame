@@ -7,6 +7,10 @@ public class BgMusic : MonoBehaviour
 {
     [SerializeField] Slider slider;
 
+    private void Start()
+    {
+        slider.value = PlayerPrefs.GetFloat("Volume");
+    }
     private void Update()
     {
         PlayerPrefs.SetFloat("Volume", slider.value);
