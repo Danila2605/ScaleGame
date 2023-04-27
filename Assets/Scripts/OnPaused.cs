@@ -7,9 +7,9 @@ public class OnPaused : MonoBehaviour
 {
     [SerializeField] GameObject cameraMain;
     [SerializeField] GameObject cameraAddition;
+    [SerializeField] GameObject convas2;
 
     private bool _isPaused = false;
-
 
  
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class OnPaused : MonoBehaviour
             cameraAddition.SetActive(true);
             Cursor.visible = true;
             Screen.lockCursor = false;
+            convas2.SetActive(false);
         }
         else
         {
@@ -39,6 +40,7 @@ public class OnPaused : MonoBehaviour
             cameraAddition.SetActive(false);
             Cursor.visible = false;
             Screen.lockCursor = true;
+            convas2.SetActive(true);
         }
     }
 

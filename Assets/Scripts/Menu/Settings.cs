@@ -32,9 +32,6 @@ public class Settings : MonoBehaviour
         _fullscreen = !_fullscreen;
         Screen.fullScreen = _fullscreen;
 
-        /*fullscreen.enabled = _fullscreen;*/
-
-
         PlayerPrefs.SetInt("Fullscreen", _fullscreen ? 1 : 0);
     }
 
@@ -57,11 +54,7 @@ public class Settings : MonoBehaviour
         else if (selectedIndex == 2)
         {
             Screen.SetResolution(1280, 720, isFullscreen);
-        }
-        else if (selectedIndex == 3)
-        {
-            Screen.SetResolution(1024, 768, isFullscreen);
-        }   
+        } 
     }
 
     public void SetQuality()

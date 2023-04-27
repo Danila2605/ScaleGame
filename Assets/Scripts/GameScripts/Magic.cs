@@ -32,10 +32,6 @@ public class Magic : MonoBehaviour
         {
             Screen.SetResolution(1280, 720, isFullscreen);
         }
-        else if (selectedIndex == 3)
-        {
-            Screen.SetResolution(1024, 768, isFullscreen);
-        }
     }
 
     void Update()

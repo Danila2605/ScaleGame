@@ -11,17 +11,7 @@ public class Menu : MonoBehaviour
         Cursor.visible = true;
         Screen.lockCursor = false;
     }
-    /*public void AppearToContinue()
-    {
-        if (PlayerPrefs.HasKey("OnGame") == true)
-        {
-            buttonContinue.SetActive(true);
-        }
-        else
-        {
-            buttonContinue.SetActive(false);
-        }
-    }*/
+   
     public void ToPlay()
     {
         SceneManager.LoadScene(2);
