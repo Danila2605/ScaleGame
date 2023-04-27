@@ -11,7 +11,7 @@ public class Finish : MonoBehaviour
     [SerializeField] GameObject wall6;
     [SerializeField] GameObject mainBox;
     [SerializeField] GameObject secondBox;
-    [SerializeField] GameObject cameraPlayer;
+    [SerializeField] GameObject player;
     [SerializeField] GameObject light;
     [SerializeField] GameObject sphereSpace;
     [SerializeField] GameObject triggerTimer;
@@ -31,6 +31,7 @@ public class Finish : MonoBehaviour
             wall4.GetComponent<Rigidbody>().isKinematic = false;
             wall5.GetComponent<Rigidbody>().isKinematic = false;
             wall6.GetComponent<Rigidbody>().isKinematic = false;
+            player.GetComponent<Rigidbody>().useGravity = false;
             mainBox.GetComponent<Rigidbody>().isKinematic = false;
             secondBox.GetComponent<Rigidbody>().isKinematic = false;
             sphereSpace.GetComponent<SphereCollider>().isTrigger = false;
