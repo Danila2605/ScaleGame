@@ -5,29 +5,11 @@ using UnityEngine.UI;
 
 public class BgMusic : MonoBehaviour
 {
-    [SerializeField] Slider volume;
-    private AudioSource audioSrc;
-    private float musicVolume;
-
-    private void Awake()
-    {
-        audioSrc = GetComponent<AudioSource>();
-        audioSrc.volume = PlayerPrefs.GetFloat("Volume");
-        volume.value = PlayerPrefs.GetFloat("Volume");
-    }
-
-    public void SetVolume(float vol)
-    {
-        musicVolume = vol;
-        PlayerPrefs.SetFloat("Volume", musicVolume);
-        PlayerPrefs.Save();
-
-        /*volume.value = musicVolume;*/
-    }
+    [SerializeField] Slider slider;
 
     private void Update()
     {
-        volume.value = PlayerPrefs.GetFloat("Volume");
+        PlayerPrefs.SetFloat("Volume", slider.value);
+        PlayerPrefs.Save();
     }
-    
 }

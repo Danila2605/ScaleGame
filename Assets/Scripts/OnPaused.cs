@@ -10,6 +10,8 @@ public class OnPaused : MonoBehaviour
 
     private bool _isPaused = false;
 
+
+ 
     // Update is called once per frame
     void Update()
     {
@@ -28,12 +30,15 @@ public class OnPaused : MonoBehaviour
         {
             cameraMain.SetActive(false);
             cameraAddition.SetActive(true);
+            Cursor.visible = true;
+            Screen.lockCursor = false;
         }
         else
         {
             cameraMain.SetActive(true);
             cameraAddition.SetActive(false);
-            
+            Cursor.visible = false;
+            Screen.lockCursor = true;
         }
     }
 
